@@ -1,0 +1,50 @@
+name: tenant_ledger
+description: "  "
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  drift: ^2.27.0
+  drift_flutter: ^0.2.4
+  permission_handler: ^12.0.1
+  flutter_riverpod: ^2.6.1
+  salomon_bottom_bar: ^3.3.2
+  intl: ^0.20.2
+  toastification: ^3.0.3
+  flutter_local_notifications: ^19.3.0
+  image_picker: ^1.1.2
+  path_provider: ^2.1.5
+  pdf: ^3.11.3
+  open_file: ^3.5.10
+  share_plus: ^11.0.0
+  printing: ^5.14.2
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  drift_dev: ^2.26.1
+  build_runner: ^2.4.15
+  flutter_lints: ^5.0.0
+
+  flutter_launcher_icons: "^0.14.4"
+
+flutter_launcher_icons:
+  android: "ic_launcher"
+  image_path: "assets/images/logo.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/logo.png
+  fonts:
+    - family: SFPro
+      fonts:
+        - asset: assets/fonts/SF-Pro.ttf
