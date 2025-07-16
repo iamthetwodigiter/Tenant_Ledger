@@ -200,109 +200,106 @@ class _TenantsDetailsPageState extends ConsumerState<TenantsDetailsPage> {
             children: [
               SizedBox(height: 20),
               // Profile Card
-              Hero(
-                tag: 'tenant-avatar-${widget.tenant.tenantID}',
-                child: Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 16),
-                  padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-                  decoration: BoxDecoration(
-                    color: AppTheme.primaryColor.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(24),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppTheme.primaryColor.withValues(alpha: 0.1),
-                        blurRadius: 12,
-                        offset: Offset(0, 6),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        radius: 42,
-                        backgroundColor: AppTheme.primaryWhite,
-                        child: Text(
-                          widget.tenant.name.isNotEmpty
-                              ? widget.tenant.name[0].toUpperCase()
-                              : '',
-                          style: TextStyle(
-                            color: AppTheme.primaryColor,
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 16),
-                      Text(
-                        widget.tenant.name,
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 16),
+                padding: EdgeInsets.symmetric(vertical: 30, horizontal: 16),
+                decoration: BoxDecoration(
+                  color: AppTheme.primaryColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(24),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppTheme.primaryColor.withValues(alpha: 0.1),
+                      blurRadius: 12,
+                      offset: Offset(0, 6),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 42,
+                      backgroundColor: AppTheme.primaryWhite,
+                      child: Text(
+                        widget.tenant.name.isNotEmpty
+                            ? widget.tenant.name[0].toUpperCase()
+                            : '',
                         style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
                           color: AppTheme.primaryColor,
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 6),
-                      GestureDetector(
-                        onTap: () {
-                          _callTenant(widget.tenant.mobileNo);
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 6,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppTheme.primaryColor.withValues(alpha: 0.4),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.phone_android,
+                    ),
+                    SizedBox(height: 16),
+                    Text(
+                      widget.tenant.name,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: AppTheme.primaryColor,
+                      ),
+                    ),
+                    SizedBox(height: 6),
+                    GestureDetector(
+                      onTap: () {
+                        _callTenant(widget.tenant.mobileNo);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppTheme.primaryColor.withValues(alpha: 0.4),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.phone_android,
+                              color: AppTheme.primaryWhite,
+                              size: 16,
+                            ),
+                            SizedBox(width: 6),
+                            Text(
+                              widget.tenant.mobileNo,
+                              style: TextStyle(
+                                fontSize: 16,
                                 color: AppTheme.primaryWhite,
-                                size: 16,
+                                fontWeight: FontWeight.w500,
                               ),
-                              SizedBox(width: 6),
-                              Text(
-                                widget.tenant.mobileNo,
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: AppTheme.primaryWhite,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
-                      SizedBox(height: 12),
-                      // Status Indicators
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildStatusBadge(
-                            widget.tenant.agreementDone
-                                ? 'Agreement Done'
-                                : 'Agreement Pending',
-                            widget.tenant.agreementDone
-                                ? Colors.green
-                                : Colors.orange,
-                          ),
-                          SizedBox(width: 8),
-                          _buildStatusBadge(
-                            widget.tenant.totalDueAmount > 0
-                                ? 'Has Due'
-                                : 'No Dues',
-                            widget.tenant.totalDueAmount > 0
-                                ? AppTheme.primaryRed
-                                : Colors.green,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(height: 12),
+                    // Status Indicators
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _buildStatusBadge(
+                          widget.tenant.agreementDone
+                              ? 'Agreement Done'
+                              : 'Agreement Pending',
+                          widget.tenant.agreementDone
+                              ? Colors.green
+                              : Colors.orange,
+                        ),
+                        SizedBox(width: 8),
+                        _buildStatusBadge(
+                          widget.tenant.totalDueAmount > 0
+                              ? 'Has Due'
+                              : 'No Dues',
+                          widget.tenant.totalDueAmount > 0
+                              ? AppTheme.primaryRed
+                              : Colors.green,
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
 

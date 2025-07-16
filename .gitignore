@@ -45,4 +45,5 @@ app.*.map.json
 /android/app/release
 
 # User Defined
-/lib/config/
+/.env
+# this .env file is to use flutterforge to automate the build and release process and should not be included in the commit
